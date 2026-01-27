@@ -92,10 +92,6 @@ This is where data is actively stored, managed, and organized.
 
 ---
 
-Here are your structured notes based on the lecture transcript. I have formatted them in Markdown for easy integration into your documentation.
-
----
-
 ## **Subject: Information and Data Models**
 
 ## 1. Overview
