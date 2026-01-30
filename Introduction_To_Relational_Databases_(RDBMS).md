@@ -1,4 +1,4 @@
-## **Subject: Review of Data Fundamentals & RDBMS**
+# Review of Data Fundamentals & RDBMS
 
 ### **1. What is Data?**
 
@@ -92,7 +92,7 @@ This is where data is actively stored, managed, and organized.
 
 ---
 
-## **Subject: Information and Data Models**
+# Information and Data Models
 
 ## 1. Overview
 
@@ -197,12 +197,6 @@ To ensure adaptability and efficiency, modern databases rely on three types of i
 3. **Physical Storage Independence**
 * **Definition:** The ability to move or reorganize data on physical storage hardware without impacting the application programs.
 * *Example:* Moving data from one hard drive to another.
-
----
-
-## **Subject: Entity Relationship Diagrams (ERDs) & Database Mapping**
-
-Here are the structured notes for both video transcripts, formatted in Markdown.
 
 ---
 
