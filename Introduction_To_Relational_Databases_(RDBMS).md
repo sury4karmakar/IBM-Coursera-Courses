@@ -197,3 +197,103 @@ To ensure adaptability and efficiency, modern databases rely on three types of i
 3. **Physical Storage Independence**
 * **Definition:** The ability to move or reorganize data on physical storage hardware without impacting the application programs.
 * *Example:* Moving data from one hard drive to another.
+
+---
+
+## **Subject: Entity Relationship Diagrams (ERDs) & Database Mapping**
+
+Here are the structured notes for both video transcripts, formatted in Markdown.
+
+---
+
+# Entity Relationship Diagrams (ERDs) & Database Mapping
+
+## 1. ERD Fundamentals
+
+An **Entity Relationship Diagram (ERD)** is a visual representation that illustrates the logical structure of a database system by showing the relationships and interactions between entities.
+
+### Key Components
+
+* **Entities (Rectangles):**
+* Represent people, objects, or concepts that store data (e.g., *Book*, *Author*).
+* Serve as the fundamental building blocks of the database.
+
+
+* **Attributes (Ovals):**
+* Specific properties or characteristics that describe an entity.
+* *Example:* A "Book" entity has attributes like *Title, Edition, Year,* and *Price*.
+
+
+* **Relationship Sets (Diamonds/Lines):**
+* Illustrate how entities are interconnected.
+* Show how instances of one entity type relate to instances of another.
+
+
+* **Crow's Foot Notation:**
+* Uses symbols (vertical lines, greater-than, less-than) to indicate the nature and quantity of relationships.
+
+
+
+---
+
+## 2. Types of Relationships
+
+Relationships define how data in one entity is linked to data in another.
+
+| Relationship Type | Description | Visual Representation |
+| --- | --- | --- |
+| **One-to-One** | Each entity is linked to exactly **one** instance of another entity. | Often denoted by a simple line or specific notation (e.g., vertical bar). |
+| **One-to-Many** | One entity is linked to **multiple** instances of another entity. | Uses a "crow's foot" or less-than symbol (<) on the "many" side. |
+| **Many-to-Many** | Multiple instances of one entity are linked to **multiple** instances of another. | Uses symbols (crow's feet) on **both** sides of the relationship line. |
+
+---
+
+## 3. Mapping Entities to Tables
+
+This process translates the conceptual ERD into a practical Relational Database schema.
+
+### The Mapping Process
+
+1. **Entity  Table:**
+* The Entity (Rectangle) becomes a **Table** in the database.
+* *Example:* The "Book" entity becomes the "Book" table.
+
+
+2. **Attributes  Columns:**
+* The Attributes (Ovals) become the **Columns** of the table.
+* *Example:* Attributes *ISBN, Title,* and *Author* become columns within the "Book" table.
+
+
+3. **Data Entry:**
+* Actual data values are added into the rows of the table to complete the transformation from concept to storage.
+
+
+
+---
+
+## 4. Best Practices for Relational Database Design
+
+To ensure efficiency, accuracy, and maintainability, follow these five key practices:
+
+* **Primary Key Designation:**
+* Assign a unique identifier (e.g., *Book ID*) to every record to uniquely identify it.
+
+
+* **Data Validation:**
+* Implement checks to ensure data consistency (e.g., ensuring *Published Year* is a number within a valid range).
+
+
+* **Default Values:**
+* Assign automatic values to columns to streamline data entry (e.g., setting *Author* to "Unknown" if left blank).
+
+
+* **Use of Views:**
+* Create customized, simplified perspectives of data for complex queries (e.g., a view combining Book and Author info).
+
+
+* **Concurrency Control:**
+* Manage simultaneous user access to prevent conflicts.
+* *Example:* Adding a "Last Modified" timestamp to track changes.
+
+
+
