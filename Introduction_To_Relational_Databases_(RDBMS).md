@@ -351,3 +351,92 @@ Choosing the correct data type is crucial for efficient database design and offe
 
 ---
 
+# Relational Model Concepts
+
+## 1. Introduction
+
+The relational model (introduced in 1970) organizes data based on two fundamental mathematical concepts: **Sets** and **Relations**.
+
+---
+
+## 2. Sets and Set Operations
+
+A **Set** is a collection of unique elements without a specified order. It is typically denoted by curly braces, e.g., .
+
+### Basic Set Operations
+
+| Operation | Symbol | Definition |
+| --- | --- | --- |
+| **Membership** |  |  means object  is an element of set . |
+| **Subset** |  |  means every element of  is also an element of . |
+| **Union** |  |  is the set of elements in , in , or in **both**. |
+| **Intersection** |  |  is the set of elements strictly in **both**  and . |
+| **Difference** |  |  is the set of elements in  but **not** in . |
+
+### Additional Set Concepts
+
+* **Empty Set ():** A unique set with no elements. It is a subset of every set.
+* **Power Set ():** The set of *all possible subsets* of  (including the empty set and  itself).
+* **Universal Set ():** The set containing all objects under consideration.
+* **Disjoint Sets:** Two sets that have no elements in common.
+
+---
+
+## 3. Relations and Properties
+
+A **Relation** describes the connection between elements of sets.
+
+* **Binary Relation:** A connection between two elements.
+* **Ordered Pairs:** A subset of a Cartesian product, denoted as .
+
+### Key Properties of Relations
+
+1. **Reflexivity:** Each element relates to itself ().
+* *Example:* The equality definition ().
+
+
+2. **Symmetry:** If  relates to , then  also relates to .
+* *Example:* "Is a sibling of".
+
+
+3. **Transitivity:** If  relates to , and  relates to , then  relates to .
+* *Example:* "Less than" () relation ( and , therefore ).
+
+
+4. **Antisymmetry:** If  relates to  and  relates to , then  must equal .
+* *Example:* "Less than or equal to" ().
+
+
+
+---
+
+## 4. Relational Database Components
+
+In a database, a "Relation" corresponds to a table. It is defined by two main components:
+
+### A. Relation Schema (The Structure)
+
+* **Definition:** Specifies the name of the relation and the definitions of its attributes (columns).
+* **Example:**
+* **Relation Name:** `Author`
+* **Attributes:** `Author_ID` (Char), `Last_Name` (Varchar), `Email` (Varchar).
+
+
+
+### B. Relation Instance (The Data)
+
+* **Definition:** Represents the real-world data stored in the table at a specific moment.
+* **Composition:** It is made up of rows (tuples) and columns (attributes).
+
+---
+
+## 5. Degree vs. Cardinality
+
+These terms describe the dimensions of a relation.
+
+* **Degree:** The number of **Attributes** (Columns).
+* *Example:* A table with columns [Name, Age, Email] has a Degree of 3.
+
+
+* **Cardinality:** The number of **Tuples** (Rows).
+* *Example:* A table with 5 user records has a Cardinality of 5.
