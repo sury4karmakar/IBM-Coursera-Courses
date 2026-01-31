@@ -361,23 +361,23 @@ The relational model (introduced in 1970) organizes data based on two fundamenta
 
 ## 2. Sets and Set Operations
 
-A **Set** is a collection of unique elements without a specified order. It is typically denoted by curly braces, e.g., .
+A **Set** is a collection of unique elements without a specified order. It is typically denoted by curly braces, e.g. {1,2,3}.
 
 ### Basic Set Operations
 
 | Operation | Symbol | Definition |
 | --- | --- | --- |
-| **Membership** |  |  means object  is an element of set . |
-| **Subset** |  |  means every element of  is also an element of . |
-| **Union** |  |  is the set of elements in , in , or in **both**. |
-| **Intersection** |  |  is the set of elements strictly in **both**  and . |
-| **Difference** |  |  is the set of elements in  but **not** in . |
+| **Membership** | ∈ | a∈A means object a is an element of set A. |
+| **Subset** | ⊆ | A⊆B means every element of A is also an element of B. |
+| **Union** | ∪ | A∪B is the set of elements in A, in B, or in **both**. |
+| **Intersection** | ∩ | A∩B is the set of elements strictly in **both** A and B. |
+| **Difference** | − | A−B is the set of elements in A but **not** in B. |
 
 ### Additional Set Concepts
 
-* **Empty Set ():** A unique set with no elements. It is a subset of every set.
-* **Power Set ():** The set of *all possible subsets* of  (including the empty set and  itself).
-* **Universal Set ():** The set containing all objects under consideration.
+* **Empty Set (∅):** A unique set with no elements. It is a subset of every set.
+* **Power Set (P(A)):** The set of *all possible subsets* of A (including the empty set and A itself).
+* **Universal Set (U):** The set containing all objects under consideration.
 * **Disjoint Sets:** Two sets that have no elements in common.
 
 ---
@@ -387,24 +387,24 @@ A **Set** is a collection of unique elements without a specified order. It is ty
 A **Relation** describes the connection between elements of sets.
 
 * **Binary Relation:** A connection between two elements.
-* **Ordered Pairs:** A subset of a Cartesian product, denoted as .
+* **Ordered Pairs:** A subset of a Cartesian product, denoted as (a,b).
 
 ### Key Properties of Relations
 
-1. **Reflexivity:** Each element relates to itself ().
-* *Example:* The equality definition ().
+1. **Reflexivity:** Each element relates to itself (a=a).
+* *Example:* The equality definition (=).
 
 
-2. **Symmetry:** If  relates to , then  also relates to .
+2. **Symmetry:** If a relates to b, then b also relates to a.
 * *Example:* "Is a sibling of".
 
 
-3. **Transitivity:** If  relates to , and  relates to , then  relates to .
-* *Example:* "Less than" () relation ( and , therefore ).
+3. **Transitivity:** If a relates to b, and b relates to c, then a relates to c.
+* *Example:* "Less than" (<) relation (1<2 and 2<3, therefore 1<3).
 
 
-4. **Antisymmetry:** If  relates to  and  relates to , then  must equal .
-* *Example:* "Less than or equal to" ().
+4. **Antisymmetry:** If a relates to b and b relates to a, then a must equal b.
+* *Example:* "Less than or equal to" (≤).
 
 
 
