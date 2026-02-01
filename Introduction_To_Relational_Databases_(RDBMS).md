@@ -440,3 +440,92 @@ These terms describe the dimensions of a relation.
 
 * **Cardinality:** The number of **Tuples** (Rows).
 * *Example:* A table with 5 user records has a Cardinality of 5.
+
+---
+
+# Database Architecture & Deployment Topologies
+
+## 1. Overview
+
+**Deployment Topology** refers to the arrangement or configuration of hardware, software, and network components in a system deployment.
+
+* **Key Selection Factors:**
+* Scalability
+* Performance
+* Reliability
+* Nature of the Application
+
+
+
+---
+
+## 2. Common Deployment Topologies
+
+### A. Single-Tier Architecture
+
+All components of the application reside on a **single server or machine**.
+
+* **Components:** User Interface (UI), Application Logic, and Data Storage.
+* **Environment:** The entire stack operates within one unified environment.
+* **Usage:** Simple, standalone applications.
+
+### B. Two-Tier (Client-Server) Architecture
+
+This topology divides the application into two distinct logical layers.
+
+* **Structure:**
+1. **Client Layer:** Responsible for the User Interface (UI).
+2. **Server Layer:** Manages Application Logic and Data Storage.
+
+
+* **Workflow:**
+* A remote server hosts the database.
+* Users access the server via client systems (web pages or local apps).
+* **Communication:** The client establishes a connection via a database interface (API or Framework) to the server.
+
+
+* **Server Internals (DBMS Layers):**
+* **Data Access Layer:** Provides interfaces for clients (Standard APIs like JDBC/ODBC, Command Line Processors, Vendor-specific interfaces).
+* **Database Engine Layer:** Compiles queries, processes data, and returns results.
+* **Database Storage Layer:** Manages the physical storage of data.
+
+
+
+### C. Three-Tier Architecture
+
+This is the standard for most **production environments**. It introduces a "Middle Tier" between the client and the database.
+
+* **Structure:**
+1. **Presentation Layer:** The UI (Desktop app, Web browser, Mobile app).
+2. **Application Layer (Middle Tier):** Encapsulates Business Logic and Application Logic.
+3. **Database Layer:** Stores the data.
+
+
+* **Workflow:**
+* The Client interacts *only* with the Application Server.
+* The Application Server communicates with the Database Server via drivers/APIs.
+* *Example:* An Internet Banking App (Mobile phone  Bank App Server  Account Database).
+
+
+* **Why use Three-Tier? (Benefits):**
+* **Security:** Direct access to the database is restricted to administrators only.
+* **Performance:** Prevents overloading the database with unnecessary traffic.
+* **Maintainability:** Admins can modify the database schema without disrupting the client application.
+
+
+
+### D. Cloud-Based Deployment
+
+Increasingly popular topology where the database resides within a cloud environment.
+
+* **Key Characteristics:**
+* Eliminates the need for local software installation.
+* Removes the burden of maintaining physical infrastructure.
+
+
+* **Advantages:**
+* **Accessibility:** Users can access data from anywhere, anytime, with just an internet connection.
+* **Flexibility:** Suitable for Development, Testing, and Full-scale Production.
+
+
+* **Interaction:** Users/Clients interact via an application server or interface hosted in the cloud.
