@@ -711,3 +711,96 @@ In the past, developers used lower-level APIs (ODBC/JDBC). Today, most use **ORM
 
 ---
 
+# Introduction to PostgreSQL
+
+## 1. History & Origins
+
+* **Origin:** The **POSTGRES** project began at the University of California over 30 years ago.
+* **Early Usage:** Used in research and production for aviation, financial services, and medicine.
+* **Evolution:**
+* **1994:** "Postgres95" was released (open source with an SQL language interpreter).
+* **Renaming:** Soon renamed to **PostgreSQL** (commonly pronounced as "Postgres").
+
+
+* **Common Stack:** Often used in the **LAPP** stack (**L**inux, **A**pache, **P**ostgreSQL, **P**HP).
+* **Extensions:** Supports extensions like **PostGIS** for geographic/spatial data handling.
+
+---
+
+## 2. Core Definition
+
+PostgreSQL is defined as a **Free, Open Source, Object-Relational Database Management System (ORDBMS)**.
+
+* **Open Source:** You can freely use, modify, and distribute the source code to meet business requirements.
+* **Object-Relational:** Unlike standard relational DBs, it supports Object-Oriented concepts:
+* **Inheritance**
+* **Overloading**
+* *Benefit:* Simplifies design and allows for the reuse of database objects.
+
+
+* **Compatibility:**
+* Runs on most modern Operating Systems.
+* Low maintenance threshold.
+* Supports ANSI-SQL standards.
+* Compatible with many programming languages for web integration.
+
+
+
+---
+
+## 3. Data Functionality
+
+Postgres is versatile, handling both traditional and modern data structures.
+
+* **Standard Relational Constructs:**
+* Keys, Transactions, Views, Functions, Stored Procedures.
+
+
+* **NoSQL Functionality:**
+* **JSON:** For storing structured data.
+* **HSTORE:** For non-hierarchical (key-value) data.
+
+
+
+---
+
+## 4. Replication & High Availability (HA)
+
+PostgreSQL supports various replication methods to ensure data safety and uptime.
+
+### A. Two-Node Synchronous Replication
+
+* **How it works:** Stores a copy of data on a second server. Every change to Node 1 is immediately applied to Node 2.
+* **Benefit:**
+* Read loads can be shared across both servers.
+* **Failover:** If Node 1 fails, Node 2 takes over immediately.
+
+
+
+### B. Multi-Node Asynchronous Replication
+
+* **How it works:** One "Master" node distributes changes to multiple "Read-Only" replicas.
+* **Benefit:** Great for **Scalability**. If the master fails, a read-only replica can be promoted to replace it.
+
+### C. Multi-Master Read/Write Replication (Commercial)
+
+* *Note: Usually requires commercial additions like EDB PostgreSQL Replication Server.*
+* **How it works:** Runs multiple databases that can **all** accept Read/Write traffic and replicate changes to each other.
+* **Benefit:** Maximum flexibility; users are redirected seamlessly if any single instance fails.
+
+---
+
+## 5. Scalability Techniques
+
+Recent releases have added technologies to handle larger datasets:
+
+1. **Partitioning:**
+* Splits a large table into smaller, manageable sections (partitions) to improve query performance.
+
+
+2. **Sharding:**
+* Enables the storage of horizontal partitions across multiple **remote servers**.
+
+
+
+---
