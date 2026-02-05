@@ -938,27 +938,18 @@ A unique feature of MySQL is its **pluggable storage engine architecture**. The 
 
 | Storage Engine | Characteristics & Use Cases |
 | --- | --- |
-| **InnoDB** | **(Default)** <br>
-
-<br>• Supports **Transactions** (ACID compliance).<br>
-
-<br>• **Row-level locking** (better multi-user performance).<br>
-
-<br>• Clustered indexes on Primary Keys.<br>
-
-<br>• Foreign Key support.<br>
-
-<br>• *Best for:* General purpose, high performance, and reliability. |
-| **MyISAM** | • Optimized for **Read-heavy** workloads (e.g., Data Warehousing, simple web apps).<br>
-
-<br>• **Table-level locking** (poor performance for Read/Write mixes).<br>
-
-<br>• Does *not* support transactions. |
-| **NDB** | • Supports **Clustering**.<br>
-
-<br>• Allows multiple MySQL server instances to run in a cluster.<br>
-
-<br>• *Best for:* High availability and redundancy. |
+| **InnoDB** | **(Default)** |
+||• Supports **Transactions** (ACID compliance).|
+||• **Row-level locking** (better multi-user performance).|
+||• Clustered indexes on Primary Keys.|
+||• Foreign Key support.|
+||• *Best for:* General purpose, high performance, and reliability.|
+| **MyISAM** | • Optimized for **Read-heavy** workloads (e.g., Data Warehousing, simple web apps).|
+||• **Table-level locking** (poor performance for Read/Write mixes).|
+||• Does *not* support transactions. |
+| **NDB** | • Supports **Clustering**.|
+||• Allows multiple MySQL server instances to run in a cluster.|
+||• *Best for:* High availability and redundancy. |
 
 ---
 
