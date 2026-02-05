@@ -883,3 +883,113 @@ A fully integrated data and AI platform running on **Red Hat OpenShift**.
 * **Containerized:** Can be deployed on private, public, or hybrid clouds.
 * **Integration:** Connects to Db2 or any other data source.
 * **Capabilities:** Organizing data (Watson Knowledge Catalog), Analytics, and Infusing AI (Watson services).
+
+
+Here are the structured notes for the "Introduction to MySQL" video transcript, formatted in Markdown.
+
+---
+
+# Introduction to MySQL
+
+## 1. Overview & History
+
+**MySQL** is an Object-Relational Database Management System (ORDBMS) known for its reliability, scalability, and ease of use. It is a cornerstone of modern web development.
+
+* **Origins:**
+* Developed by the Swedish company **MySQL AB**.
+* Named after "My," the daughter of co-founder Monte Widenius.
+* **Logo:** A dolphin named "Sakila" (named via a user contest).
+
+
+* **Ownership Timeline:**
+1. MySQL AB
+2. Acquired by **Sun Microsystems**
+3. Acquired by **Oracle Corporation**
+
+
+* **The LAMP Stack:**
+* MySQL gained massive popularity in the late 90s/early 2000s as the database component of the LAMP stack, which powered many early web giants.
+* **L**inux (OS)
+* **A**pache (Web Server)
+* **M**ySQL (Database)
+* **P**HP (Scripting Language)
+
+
+* **Licensing:**
+* **Dual Licensing:** Available under the Open Source **GNU GPL** and a Commercial license (for embedding in proprietary apps).
+* **Forks:** The open nature led to forks like **MariaDB** (led by original developers).
+
+
+
+---
+
+## 2. Key Attributes of Working with MySQL
+
+* **Compatibility:** Runs on Unix, Linux, and Windows.
+* **Languages:** Client apps can be written in almost any modern programming language.
+* **SQL Syntax:** Uses standard SQL but includes extensions for extra functionality.
+* *Example:* `LOAD DATA` statement for swift bulk imports from text files.
+
+
+* **Data Types:** Primarily Relational, but also supports **JSON** data.
+
+---
+
+## 3. Storage Engines
+
+A unique feature of MySQL is its **pluggable storage engine architecture**. The engine handles SQL operations for a table and defines its features (locking, transaction support, etc.).
+
+| Storage Engine | Characteristics & Use Cases |
+| --- | --- |
+| **InnoDB** | **(Default)** <br>
+
+<br>• Supports **Transactions** (ACID compliance).<br>
+
+<br>• **Row-level locking** (better multi-user performance).<br>
+
+<br>• Clustered indexes on Primary Keys.<br>
+
+<br>• Foreign Key support.<br>
+
+<br>• *Best for:* General purpose, high performance, and reliability. |
+| **MyISAM** | • Optimized for **Read-heavy** workloads (e.g., Data Warehousing, simple web apps).<br>
+
+<br>• **Table-level locking** (poor performance for Read/Write mixes).<br>
+
+<br>• Does *not* support transactions. |
+| **NDB** | • Supports **Clustering**.<br>
+
+<br>• Allows multiple MySQL server instances to run in a cluster.<br>
+
+<br>• *Best for:* High availability and redundancy. |
+
+---
+
+## 4. Scalability & High Availability (HA)
+
+### Replication
+
+* **Process:** Creates copies of data on one or more replicas. Changes in the source are executed on the replicas.
+* **Benefits:**
+* **Scalability:** Distribute read loads across multiple replicas.
+* **Availability:** If the source fails, failover to a replica.
+
+
+
+### Clustering Options
+
+Clustering connects multiple independent computing resources to work as a unified system. MySQL offers two main paths:
+
+#### A. InnoDB with Group Replication
+
+* **Topology:** One Read-Write Primary server + Multiple Secondary servers.
+* **MySQL Router:** Used to load balance clients across instances.
+* **Failover:** If a server fails, the Router automatically reconnects clients to an available server.
+
+#### B. MySQL Cluster Edition (NDB Engine)
+
+* **Topology:** Multiple MySQL Server nodes accessing a set of **Data Nodes** (usually in-memory).
+* **Redundancy:** Data nodes provide high availability; if one fails, others take over.
+* **Scalability:** Multiple Server nodes handle increased traffic.
+
+---
