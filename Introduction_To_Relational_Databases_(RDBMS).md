@@ -884,9 +884,6 @@ A fully integrated data and AI platform running on **Red Hat OpenShift**.
 * **Integration:** Connects to Db2 or any other data source.
 * **Capabilities:** Organizing data (Watson Knowledge Catalog), Analytics, and Infusing AI (Watson services).
 
-
-Here are the structured notes for the "Introduction to MySQL" video transcript, formatted in Markdown.
-
 ---
 
 # Introduction to MySQL
