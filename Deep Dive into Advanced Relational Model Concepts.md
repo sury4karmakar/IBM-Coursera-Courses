@@ -1,6 +1,4 @@
-
-
-Deep Dive into Advanced Relational Model Concepts
+## Deep Dive into Advanced Relational Model Concepts
 
 Estimated time: 10 minutes
 Objective
@@ -79,12 +77,14 @@ Here's the important thing: A table can have multiple candidate keys. As long as
 Practical scenario
 
 Let's consider a hypothetical scenario where we have a database for tracking employee projects. Each employee can work on multiple projects, and each project can involve multiple employees. We'll create a table to represent this scenario:
-EmployeeID 	ProjectID 	EmployeeName 	ProjectName 	Department
-1 	101 	Alice 	Project X 	HR
-1 	102 	Alice 	Project Y 	Finance
-2 	101 	Bob 	Project X 	HR
-3 	101 	Charlie 	Project X 	IT
-3 	102 	Charlie 	Project Y 	Finance
+
+| EmployeeID | ProjectID | EmployeeName | ProjectName |	Department |
+| --- | --- | --- | --- | --- |
+| 1 | 101 |	Alice |	Project X |	HR|
+| 1 | 102 |	Alice |	Project Y |	Finance|
+| 2 | 101 |	Bob |	Project X |	HR|
+| 3 | 101 |	Charlie | 	Project X |	IT|
+| 3 | 102 |	Charlie |	Project Y |	Finance|
 
 In this table:
 
@@ -145,14 +145,15 @@ There are two candidate keys (CKs):
         1 -> 101 => HR
 
 For instance, if Alice was assigned to Project X and Charlie to Project Y (assuming unique names within projects), then the combination of "John" and "Project X" or "Mary" and "Project Y" would uniquely identify their respective rows.
-Summary
-Aspect 	Functional Dependencies 	Multi-Valued Dependencies (MVDs) 	Candidate Keys
-Definition 	Describe relationships between attributes 	Extend the concept to groups of attributes 	Sets of attributes uniquely identifying rows
-Essence 	Values of certain attributes determined by others 	Dependencies between sets of attributes 	Uniquely identify each row in a table
-Example 	Knowing one attribute allows finding another 	Describe how sets of attributes determine each other 	Combination of attributes uniquely identifying each record
-Purpose 	Ensure data accuracy and minimize redundancy 	Organize data effectively, avoiding mix-ups 	Enforce entity integrity constraints
-Usage 	Essential for database normalization 	Crucial for maintaining data integrity 	Establish relationships between tables
-Author(s)
 
-Akansha Yadav
+Summary
+
+|Aspect |	Functional Dependencies |	Multi-Valued Dependencies (MVDs) 	|Candidate Keys|
+| --- | --- | --- | --- |
+|Definition |	Describe relationships between attributes |	Extend the concept to groups of attributes |	Sets of attributes uniquely identifying rows|
+|Essence |	Values of certain attributes determined by others |	Dependencies between sets of attributes |	Uniquely identify each row in a table|
+|Example |	Knowing one attribute allows finding another |	Describe how sets of attributes determine each other |	Combination of attributes uniquely identifying each record|
+|Purpose |	Ensure data accuracy and minimize redundancy |	Organize data effectively, avoiding mix-ups |	Enforce entity integrity constraints|
+|Usage |	Essential for database normalization 	|Crucial for maintaining data integrity |	Establish relationships between tables Author(s)|
+
 
