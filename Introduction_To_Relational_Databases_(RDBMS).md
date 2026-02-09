@@ -1022,11 +1022,87 @@ DML statements are used to **read and modify** the actual data within the tables
 
 ---
 
-## 4. Summary Comparison
+# The CREATE TABLE Statement
 
-| Feature | Data Definition Language (DDL) | Data Manipulation Language (DML) |
-| --- | --- | --- |
-| **Primary Focus** | The **Structure** (Database Objects) | The **Data** (Rows/Values) |
-| **Action** | Defines or changes the container (Table). | Manipulates the content inside the container. |
-| **Key Commands** | `CREATE`, `ALTER`, `TRUNCATE`, `DROP` | `INSERT`, `SELECT`, `UPDATE`, `DELETE` |
+## 1. Overview
 
+The `CREATE TABLE` statement is the most common **Data Definition Language (DDL)** command. It is used to define a new entity (table) and its attributes (columns) within a relational database.
+
+## 2. Basic Syntax
+
+To create a table, you must specify the table name and define the columns within parentheses.
+
+**Structure:**
+
+```sql
+CREATE TABLE table_name (
+    column1 datatype [optional_constraints],
+    column2 datatype [optional_constraints],
+    ...
+);
+
+```
+
+* **Process:**
+1. Start with `CREATE TABLE`.
+2. Specify the `table_name`.
+3. Open parentheses `( ... )`.
+4. List column names followed by their **Data Type** and optional **Constraints**.
+5. Separate each column definition with a comma.
+
+
+
+---
+
+## 3. Example 1: Creating a Simple Table
+
+**Scenario:** Creating a table to store Canadian Provinces.
+
+**SQL Code:**
+
+```sql
+CREATE TABLE provinces (
+    id CHAR(2) PRIMARY KEY NOT NULL,
+    name VARCHAR(24)
+);
+
+```
+
+**Breakdown of Data Types:**
+
+* **CHAR(2):** A character string of **fixed length** (always 2 characters). Used for abbreviations like 'AB', 'BC'.
+* **VARCHAR(24):** A character string of **variable length** (up to 24 characters). Used for full names like 'Alberta' or 'British Columbia'.
+
+---
+
+## 4. Example 2: Complex Table with Constraints
+
+**Scenario:** Creating an `Author` table for a library database.
+
+**SQL Code:**
+
+```sql
+CREATE TABLE author (
+    Author_ID CHAR(2) PRIMARY KEY NOT NULL,
+    Lastname VARCHAR(15) NOT NULL,
+    Firstname VARCHAR(15) NOT NULL,
+    Email VARCHAR(40),
+    City VARCHAR(15),
+    Country CHAR(2)
+);
+
+```
+
+**Key Constraints Explained:**
+
+* **PRIMARY KEY:**
+* Designates a column (or set of columns) as the unique identifier for the table.
+* Ensures there are **no duplicate values** (e.g., two authors cannot have the same ID).
+* Uniquely identifies each tuple (row).
+
+
+* **NOT NULL:**
+* Ensures that a column **cannot be left empty**.
+* In the example above, `Lastname` and `Firstname` must have values because every author must have a name.
+
+---
