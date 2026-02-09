@@ -981,3 +981,52 @@ Clustering connects multiple independent computing resources to work as a unifie
 * **Scalability:** Multiple Server nodes handle increased traffic.
 
 ---
+
+# Types of SQL Statements
+
+## 1. Overview
+
+SQL statements are the primary method for interacting with Relational Databases. They allow you to work with:
+
+* **Entities:** Tables
+* **Attributes:** Columns
+* **Tuples:** Rows with data values
+
+SQL statements are broadly categorized into two types: **Data Definition Language (DDL)** and **Data Manipulation Language (DML)**.
+
+---
+
+## 2. Data Definition Language (DDL)
+
+DDL statements are used to **define, change, or drop** database objects (like tables) themselves. They deal with the *structure* of the database, not the specific data inside the rows.
+
+### Common DDL Commands:
+
+* **CREATE:** Used for creating new tables and defining their columns.
+* **ALTER:** Used for modifying existing tables (e.g., adding/dropping columns, changing data types).
+* **TRUNCATE:** Used for deleting **all data** inside a table, but keeps the table structure intact.
+* **DROP:** Used for deleting the table entirely (structure + data).
+
+---
+
+## 3. Data Manipulation Language (DML)
+
+DML statements are used to **read and modify** the actual data within the tables. These are often referred to as **CRUD** operations (Create, Read, Update, Delete).
+
+### Common DML Commands:
+
+* **INSERT:** Adds a single row or multiple rows of data into a table. *(Create)*
+* **SELECT:** Reads or retrieves specific rows from a table. *(Read)*
+* **UPDATE:** Edits existing rows in a table. *(Update)*
+* **DELETE:** Removes specific rows of data from a table. *(Delete)*
+
+---
+
+## 4. Summary Comparison
+
+| Feature | Data Definition Language (DDL) | Data Manipulation Language (DML) |
+| --- | --- | --- |
+| **Primary Focus** | The **Structure** (Database Objects) | The **Data** (Rows/Values) |
+| **Action** | Defines or changes the container (Table). | Manipulates the content inside the container. |
+| **Key Commands** | `CREATE`, `ALTER`, `TRUNCATE`, `DROP` | `INSERT`, `SELECT`, `UPDATE`, `DELETE` |
+
