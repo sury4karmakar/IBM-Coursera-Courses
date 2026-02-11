@@ -1184,3 +1184,100 @@ TRUNCATE TABLE author IMMEDIATE;
 
 ```
 ---
+
+# Data Movement Utilities
+
+## 1. Overview
+
+Data Engineers and Database Administrators (DBAs) frequently move data in and out of databases.
+**Common Reasons for Data Movement:**
+
+* **Populating:** Filling the database and objects (tables) with initial data.
+* **Duplication:** Creating copies of the database for development or testing environments.
+* **Disaster Recovery:** Creating snapshots of the database state.
+* **Integration:** Generating new tables using data from external sources or files.
+* **Appending:** Adding data into existing tables.
+
+---
+
+## 2. Methods for Data Movement
+
+There are three primary categories of tools used for moving data:
+
+1. **Backup and Restore**
+2. **Import and Export**
+3. **Load**
+
+---
+
+## 3. Backup and Restore
+
+This method is used to create an exact replica of the database.
+
+* **Backup Operation:**
+* Creates a file (or set of files) that encapsulates **all** database objects and their data.
+* **Preserves:** Schemas, tables, views, functions, stored procedures, constraints, triggers, security settings, and relationships.
+
+
+* **Restore Operation:**
+* Creates an exact copy of the original database from the backup files.
+
+
+* **Use Cases:**
+* **Disaster Recovery:** Essential for preserving production data.
+* **Cloning:** Creating identical environments for Dev/Test teams.
+
+---
+
+## 4. Import and Export
+
+These operations focus on moving data between the database and external files.
+
+* **Import Operation:**
+* Reads data from a file.
+* Performs a series of **INSERT statements** against the target table.
+
+
+* **Export Operation:**
+* Retrieves data from a designated table.
+* Stores it in a chosen file format.
+
+### Supported File Formats
+
+| Format | Description |
+| --- | --- |
+| **DEL (Delimited ASCII)** | Uses special characters to separate column values (e.g., **CSV**). Common for data exchange between different systems. |
+| **ASC (Non-delimited ASCII)** | Used for flat text files where columns are aligned by fixed width (no delimiters). |
+| **PC/IXF (Integration Exchange Format)** | A structured format that includes a description of the table + the data. Preferred for moving data *within* the same database manager family. |
+| **JSON** | Increasingly popular due to REST web services; supported by modern tools for structured/semi-structured data. |
+
+---
+
+## 5. The Load Utility (vs. Import)
+
+While **Import** uses SQL `INSERT` commands, **Load** is a high-performance alternative for massive datasets.
+
+* **Mechanism:** Writes formatted pages **directly** into the database (bypassing the SQL engine).
+* **Pros:**
+* Significantly faster than Import.
+* Ideal for **large volumes** of data.
+
+
+* **Cons:**
+* **Bypasses Checks:** Does *not* perform referential integrity or table constraint checking.
+* **Logging:** May bypass database logging (which increases speed but affects recoverability during the load).
+
+---
+
+## 6. DB2 Examples
+
+Different interfaces exist for these operations:
+
+* **Command Line (CLI):** Allows typing file names, formats, and table names directly.
+* *Note:* The Export utility can use a **SQL Query** to export only a specific subset of data.
+
+
+* **DB2 Cloud Web Console:** A visual interface.
+* *Steps:* Select Table  View Data  Export Button  Export to CSV.
+
+---
