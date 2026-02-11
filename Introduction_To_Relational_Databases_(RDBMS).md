@@ -1106,3 +1106,81 @@ CREATE TABLE author (
 * In the example above, `Lastname` and `Firstname` must have values because every author must have a name.
 
 ---
+
+# Modifying and Deleting Tables (DDL)
+
+## 1. The ALTER TABLE Statement
+
+The `ALTER TABLE` statement is used to modify the structure of an existing table without deleting it. It allows you to:
+
+* Add or remove columns.
+* Modify the data type of columns.
+* Add or remove keys and constraints.
+
+**Key Syntax Note:** Unlike the `CREATE TABLE` statement, `ALTER TABLE` **does not** use parentheses to enclose parameters.
+
+### A. Adding a Column
+
+Used when you need to store new information in an existing table.
+
+* **Syntax:** `ALTER TABLE table_name ADD COLUMN column_name data_type;`
+* **Example:** Adding a telephone number column to the author table.
+```sql
+ALTER TABLE author ADD COLUMN telephone_number BIGINT;
+
+```
+
+*(Note: `BIGINT` can hold numbers up to 19 digits long).*
+
+### B. Modifying a Column (Data Type)
+
+Used to change the data type of an existing column (e.g., changing a numeric field to a character field to allow dashes and brackets).
+
+* **Syntax:** `ALTER TABLE table_name ALTER COLUMN column_name SET DATA TYPE new_data_type;`
+* **Example:** Changing the telephone number to `CHAR` to allow formatting.
+```sql
+ALTER TABLE author ALTER COLUMN telephone_number SET DATA TYPE CHAR(20);
+
+```
+
+> **Warning:** Altering a column that already contains data can cause errors if the existing data is incompatible with the new type (e.g., trying to convert text "ABC" into a Numeric type).
+
+### C. Dropping a Column
+
+Used when a column is no longer needed in the table specification.
+
+* **Syntax:** `ALTER TABLE table_name DROP COLUMN column_name;`
+* **Example:** Removing the telephone number column.
+```sql
+ALTER TABLE author DROP COLUMN telephone_number;
+
+```
+---
+
+## 2. The DROP TABLE Statement
+
+The `DROP TABLE` statement is used to completely remove a table from the database.
+
+* **Effect:** It deletes the **Table Structure** AND all **Data** contained within it.
+* **Syntax:** `DROP TABLE table_name;`
+* **Example:**
+```sql
+DROP TABLE author;
+
+```
+
+---
+
+## 3. The TRUNCATE TABLE Statement
+
+The `TRUNCATE TABLE` statement is used to delete **all rows** of data in a table while keeping the table structure intact.
+
+* **Efficiency:** It is generally faster and more efficient than using a `DELETE` statement without a `WHERE` clause.
+* **Keyword:** The `IMMEDIATE` keyword is often used to indicate immediate processing and emphasizes that the action **cannot be reversed**.
+* **Syntax:** `TRUNCATE TABLE table_name IMMEDIATE;`
+* **Example:**
+```sql
+TRUNCATE TABLE author IMMEDIATE;
+
+```
+---
